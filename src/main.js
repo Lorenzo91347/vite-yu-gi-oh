@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { createApp } from 'vue'
 import '../src/assets/styles/main.scss'
 import App from './App.vue'
