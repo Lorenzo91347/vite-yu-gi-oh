@@ -1,40 +1,44 @@
 <script>
-import axios from 'axios'
 import {store} from '../store'
 import AppCard from './AppCard.vue';
+import AppCounter from './AppCounter.vue';
 export default{
     data(){
         return{
-            store
+            store,
         }
     },
     components:{
-        AppCard
+        AppCard,
+        AppCounter
     },
-    created() {
-    axios
-      .get(
-        this.store.cardsAPI.apiURL    
-      )
-      .then((response) => {
-        this.store.cards = response.data.results;
-      });
-}}
+    
+}
 </script>
 <template>
-    <div>
+     <div>
+        <AppCounter/>
+        <div class="list-cnt">
         <AppCard 
         v-for="card in store.cards"
         :name="card.name"
         :archetype="card.archetype"
-        :img="card.card_images.img"
-/>
+        :img="card.card_images[0].image_url" />
+        </div>
+
     </div>
 
 </template>
 <style scoped lang="scss">
-div{
-    height: 100%;
-   
-}
+ div{
+    background-color: white;
+    
+    .list-cnt{ 
+     width: 1040px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    }
+ }
 </style>

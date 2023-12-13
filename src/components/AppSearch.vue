@@ -1,9 +1,11 @@
 <script>
 import AppList from './AppList.vue';
-
+import {store} from '../store'
 export default{
     data(){
-
+        return{
+            store,
+        }
     },
     components:{
         AppList,
@@ -28,7 +30,6 @@ export default{
 @use '../assets/styles/main.scss' as *;
 .background{
     background-color: $main-color;
-    height: 500px;
     padding-top: 25px;
     .dropdown{
         margin-left: 75px;
@@ -43,17 +44,13 @@ export default{
     }
     .card-cnt{
         background-color: white;
-        height: 100%;
         width: 1140px;
         margin: 20px auto 0;
+        padding-top: 35px;
     }
 
 
 }
-
-
-
-
 
 
 </style>

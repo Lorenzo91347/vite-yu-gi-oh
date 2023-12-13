@@ -4,12 +4,30 @@ export default{
 }
 </script>
 <template>
-    <div>
+    <div class="card-info">
         <img :src="img" alt="">
-        <h4>{{ name }}</h4>
+        <h5>{{ name }}</h5>
         <div>{{ archetype }}</div>
     </div>
 
 </template>
-<style lang="scss">
+<style scoped lang="scss">
+@use '../assets/styles/main.scss' as *;
+.card-info{
+    background-color: $main_color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid;
+    height: 400px;
+    text-align: center;
+    margin-bottom: 10px;
+    h5{
+        color: white;
+    }
+    img{
+        width: 185px;
+    }
+}
+
 </style>
