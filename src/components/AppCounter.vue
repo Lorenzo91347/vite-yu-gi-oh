@@ -1,8 +1,15 @@
 <script>
-export default{}
+import {store} from '../store'
+export default{
+    data(){
+        return{
+            store
+        }
+    }
+}
 </script>
 <template>
-<div>Found N cards</div>
+<div>Found {{ store.cards.length }} cards</div>
 </template>
 <style scoped lang="scss">
 div{
